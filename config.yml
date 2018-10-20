@@ -1,0 +1,13 @@
+crawl_threads: 1
+channel_threads: 1
+feed_threads: 1
+video_threads: 1
+db:
+  user: kemal
+  password: kemal
+  host: postgres
+  port: 5432
+  dbname: invidious
+full_refresh: false
+https_only: false
+geo_bypass: true

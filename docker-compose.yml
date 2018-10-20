@@ -1,0 +1,21 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:10
+    restart: unless-stopped
+    volumes:
+      - postgresdata:/var/lib/postgresql/data
+  invidious:
+    image: flourgaz/invidious
+    restart: unless-stopped
+    volumes:
+      - ./config.yml:/invidious/config/config.yml
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+
+volumes:
+  postgresdata:
+    external:
+      name: invidious_postgresdata
